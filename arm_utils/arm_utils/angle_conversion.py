@@ -10,7 +10,7 @@ class AnglesConverter(Node):
         super().__init__("angle_conversion_service_server")
         self.euler_to_quaternion_ = self.create_service(EulerToQuaternion, "euler_to_quaternion", self.eulerToQuaternionCallback)
         self.quaternion_to_euler_ = self.create_service(QuaternionToEuler, "quaternion_to_euler", self.quaternionToEulerCallback)
-        self.get_logger().info("Angles conversion services are ready")
+        self.get_logger().info("Angles conversion services are ready and running ")
 
     def eulerToQuaternionCallback(self, req, res):
         self.get_logger().info("Requested to convert euler angles roll: %f, pitch: %f, yaw: %f, into a quaternion." % (req.roll, req.pitch, req.yaw))
